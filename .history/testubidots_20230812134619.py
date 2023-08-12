@@ -3,15 +3,16 @@ import random
 import time
 
 import requests
-from ubidots import ApiClient
 
-TOKEN = "BBFF-bOXJfK0ohlRBQ0bOsGE9IXUo3H5eus"  # Put your TOKEN here
+TOKEN = "..."  # Put your TOKEN here
 DEVICE_LABEL = "machine"  # Put your device label here
 VARIABLE_LABEL_1 = "temperature"  # Put your first variable label here
 VARIABLE_LABEL_2 = "humidity"  # Put your second variable label here
 VARIABLE_LABEL_3 = "position"  # Put your second variable label here
 
-api = ApiClient(token=TOKEN)
+from ubidots import ApiClient
+
+api = ApiClient(token='BBFF-bOXJfK0ohlRBQ0bOsGE9IXUo3H5eus')
 
 
 def build_payload(variable_1, variable_2, variable_3):
@@ -35,7 +36,7 @@ def post_request(payload):
     # Creates the headers for the HTTP requests
     url = "http://industrial.api.ubidots.com"
     url = "{}/api/v1.6/devices/{}".format(url, DEVICE_LABEL)
-    headers = {"X-Auth-Token": TOKEN, "Content-Type": "application/json"}
+    headers = {"X-Auth-Token": "BBFF-bOXJfK0ohlRBQ0bOsGE9IXUo3H5eus", "Content-Type": "application/json"}
 
     # Makes the HTTP requests
     status = 400
