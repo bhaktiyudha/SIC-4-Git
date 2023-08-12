@@ -48,7 +48,7 @@ def post_request(payload):
         time.sleep(1)
 
     # Processes results
-    print("[INFO] Request code :", req.status_code,",Payload :", req.json())
+    print("[INFO] Request code : ", req.status_code," payload :", req.json())
     if status >= 400:
         print("[ERROR] Could not send data after 5 attempts, please check \
             your token credentials and internet connection")
@@ -84,5 +84,6 @@ if __name__ == '__main__':
                 print("[INFO] Switch is ON")
             else:
                 print("[INFO] Switch is OFF")
+            print("[INFO] ---------------- ")
         except:
             print("[ERROR] Connection to Ubidots Error")

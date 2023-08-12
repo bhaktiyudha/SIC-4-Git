@@ -48,7 +48,7 @@ def post_request(payload):
         time.sleep(1)
 
     # Processes results
-    print("[INFO] Request code :", req.status_code,",Payload :", req.json())
+    print("[INFO] Request code : ", req.status_code," payload :", req.json())
     if status >= 400:
         print("[ERROR] Could not send data after 5 attempts, please check \
             your token credentials and internet connection")
@@ -73,7 +73,6 @@ if __name__ == '__main__':
     slider = api.get_variable('64d728a503c304000fa913b4')
     while (True):
         try:
-            print("[INFO] ---------------- ")
             main()
             time.sleep(1)
             switch_last_value = switch.get_values(1)

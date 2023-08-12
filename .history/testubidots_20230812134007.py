@@ -48,13 +48,13 @@ def post_request(payload):
         time.sleep(1)
 
     # Processes results
-    print("[INFO] Request code :", req.status_code,",Payload :", req.json())
+    print(req.status_code, req.json())
     if status >= 400:
         print("[ERROR] Could not send data after 5 attempts, please check \
             your token credentials and internet connection")
         return False
 
-    print("[INFO] Request made properly, your device is updated")
+    print("[INFO] request made properly, your device is updated")
     return True
 
 
@@ -63,7 +63,7 @@ def main():
         VARIABLE_LABEL_1, VARIABLE_LABEL_2, VARIABLE_LABEL_3)
     print("[INFO] Attemping to send data")
     post_request(payload)
-    print("[INFO] Finished send data")
+    print("[INFO] finished")
 
 
 if __name__ == '__main__':
@@ -73,16 +73,15 @@ if __name__ == '__main__':
     slider = api.get_variable('64d728a503c304000fa913b4')
     while (True):
         try:
-            print("[INFO] ---------------- ")
             main()
             time.sleep(1)
             switch_last_value = switch.get_values(1)
             slider_last_value = slider.get_values(1)
-            print("[INFO] Slider Value",slider_last_value[0]['value'])
+            print("Slider Value",slider_last_value[0]['value'])
             # Then you can read this value and do something:
             if switch_last_value[0]['value']:
-                print("[INFO] Switch is ON")
+                print("Switch is ON")
             else:
-                print("[INFO] Switch is OFF")
+                print("Switch is OFF")
         except:
-            print("[ERROR] Connection to Ubidots Error")
+            print("Connection to Ubidots Error")
