@@ -1,0 +1,318 @@
+[
+    {
+        "id": "159f505ca71fd5a8",
+        "type": "debug",
+        "z": "b36cc6605980c181",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6d1c685ce599b292",
+        "type": "mqtt out",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "topic": "testtopic/yudha",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "50e4ad9683639c7b",
+        "x": 380,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "03fa272438981bd0",
+        "type": "mqtt in",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "topic": "testtopic/yudha",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "50e4ad9683639c7b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "159f505ca71fd5a8",
+                "6269607af5ffa9f9",
+                "a7127111d41660a8"
+            ]
+        ]
+    },
+    {
+        "id": "487f2b4cc72707b7",
+        "type": "inject",
+        "z": "b36cc6605980c181",
+        "name": "Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "testtopic/yudha",
+        "payload": "7",
+        "payloadType": "num",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "6d1c685ce599b292"
+            ]
+        ]
+    },
+    {
+        "id": "6269607af5ffa9f9",
+        "type": "ui_gauge",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "group": "9f9fa16107e3784c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a7127111d41660a8",
+        "type": "ui_chart",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "group": "9f9fa16107e3784c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2eeb3a554c61270e",
+        "type": "mqtt in",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "topic": "SIC-Banana",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af23b795555028ae",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "c1216ef22fbb885e"
+            ]
+        ]
+    },
+    {
+        "id": "9789ed3e13d54435",
+        "type": "mqtt out",
+        "z": "b36cc6605980c181",
+        "name": "",
+        "topic": "SIC-Banana",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af23b795555028ae",
+        "x": 370,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1b68cd6b9ff7442a",
+        "type": "inject",
+        "z": "b36cc6605980c181",
+        "name": "Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SIC-Banana",
+        "payload": "8",
+        "payloadType": "num",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "9789ed3e13d54435"
+            ]
+        ]
+    },
+    {
+        "id": "c1216ef22fbb885e",
+        "type": "debug",
+        "z": "b36cc6605980c181",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "50e4ad9683639c7b",
+        "type": "mqtt-broker",
+        "name": "Hive-MQ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9f9fa16107e3784c",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "04b0f91fc4130068",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "af23b795555028ae",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "04b0f91fc4130068",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
